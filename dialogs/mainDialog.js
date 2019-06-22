@@ -91,9 +91,6 @@ class MainDialog extends ComponentDialog {
            // this.logger.log('LUIS extracted these booking details:', bookingDetails);
         }
 
-        // In this sample we only have a single intent we are concerned with. However, typically a scenario
-        // will have multiple different intents each corresponding to starting a different child dialog.
-
         this.logger.log('LUIS extracted these booking details:', bookingDetails);
 
         // Run the BookingDialog giving it whatever details we have from the LUIS call, it will fill out the remainder.
