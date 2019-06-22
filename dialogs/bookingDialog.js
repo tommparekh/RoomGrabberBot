@@ -123,9 +123,7 @@ class BookingDialog extends CancelAndHelpDialog {
         const bookingDetails = stepContext.options;
         bookingDetails.meetingTime = stepContext.result.value;
 
-        console.log(bookingDetails);
-
-        if (!bookingDetails.duration) {
+       if (!bookingDetails.duration) {
             return await stepContext.prompt(TEXT_PROMPT, { prompt: 'How long do you need a meeting room for?' });
         } else {
             return await stepContext.next(bookingDetails.duration);
@@ -144,7 +142,7 @@ class BookingDialog extends CancelAndHelpDialog {
         console.log(bookingDetails);
        
         // Capture the results of the previous step
-        bookingDetails.duration = stepContext.result;
+        bookingDetails.duration = this.convertToDuration(stepContext.result);
 
         // Confirm booking
         const timeProperty = new TimexProperty('T'+bookingDetails.meetingTime);           
@@ -175,6 +173,56 @@ class BookingDialog extends CancelAndHelpDialog {
         } else {
             return await stepContext.endDialog();
         }
+    }
+
+    convertToDuration(duration) {
+
+        console.log('bookingDialog.convertToDuration()');
+
+        console.log(duration);
+        
+        const durH1 = duration.indexOf('Hr');
+        const durH2 = duration.indexOf('hr');
+
+        console.log(durH2);
+
+        if (durH1>1 || durH2>1) {
+
+            console.log('true');
+
+            if(durH1>1) {
+               const hr =  duration.substring(0, durH1);
+               return (parseInt(hr)*3600);
+            } else if (durH2>1) {
+
+                console.log('durH2');
+
+                const hr = duration.substring(0, durH2);
+
+                console.log(hr);
+
+                return (parseInt(hr)*3600);
+            }else {
+                return undefined;
+            }
+        }
+
+        const durM1 = duration.indexOf('Min');
+        const durM2 = duration.indexOf('min');
+
+        if (durM1>1 || durH2>1) {
+            if(durM1>1) {
+               const min =  duration.substring(0, durM1);
+               return (parseInt(min)*60);
+            } else if (durM2>1) {
+                const min = duration.substring(0, durM2);
+                return (parseInt(min)*60);
+            }else {
+                return undefined;
+            }
+        }
+
+        return undefined;
     }
 
     isAmbiguousTime(timex) {
