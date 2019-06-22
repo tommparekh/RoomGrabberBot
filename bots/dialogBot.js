@@ -13,6 +13,7 @@ class DialogBot extends ActivityHandler {
      */
     constructor(conversationState, userState, dialog, logger) {
         super();
+        console.log('DialogBot.constructor()');
         if (!conversationState) throw new Error('[DialogBot]: Missing parameter. conversationState is required');
         if (!userState) throw new Error('[DialogBot]: Missing parameter. userState is required');
         if (!dialog) throw new Error('[DialogBot]: Missing parameter. dialog is required');
@@ -29,6 +30,7 @@ class DialogBot extends ActivityHandler {
 
         this.onMessage(async (context, next) => {
             this.logger.log('Running dialog with Message Activity.');
+            console.log('DialogBot.onMessage()');
 
             // Run the Dialog with the new message Activity.
             await this.dialog.run(context, this.dialogState);
@@ -38,6 +40,8 @@ class DialogBot extends ActivityHandler {
         });
 
         this.onDialog(async (context, next) => {
+            console.log('DialogBot.onDialog()');
+
             // Save any state changes. The load happened during the execution of the Dialog.
             await this.conversationState.saveChanges(context, false);
             await this.userState.saveChanges(context, false);

@@ -2,12 +2,13 @@
 // Licensed under the MIT License.
 
 const { TimexProperty } = require('@microsoft/recognizers-text-data-types-timex-expression');
-const { ConfirmPrompt, TextPrompt, WaterfallDialog } = require('botbuilder-dialogs');
+const { ConfirmPrompt, TextPrompt, WaterfallDialog,  ChoiceFactory, ChoicePrompt } = require('botbuilder-dialogs');
 const { CancelAndHelpDialog } = require('./cancelAndHelpDialog');
 const { DateResolverDialog } = require('./dateResolverDialog');
 
 const humanizeDuration = require('humanize-duration');
 
+const CHOICE_PROMPT = 'choisePrompt';
 const CONFIRM_PROMPT = 'confirmPrompt';
 const DATE_RESOLVER_DIALOG = 'dateResolverDialog';
 const TEXT_PROMPT = 'textPrompt';
@@ -17,10 +18,11 @@ class BookingDialog extends CancelAndHelpDialog {
     constructor(id) {
         super(id || 'bookingDialog');
 
-        console.log('bookingDialog.constructor');
+        console.log('bookingDialog.constructor()');
 
         this.addDialog(new TextPrompt(TEXT_PROMPT))
             .addDialog(new ConfirmPrompt(CONFIRM_PROMPT))
+            .addDialog(new ChoicePrompt(CHOICE_PROMPT))
             .addDialog(new DateResolverDialog(DATE_RESOLVER_DIALOG))
             .addDialog(new WaterfallDialog(WATERFALL_DIALOG, [
 				this.bookingLocationStep.bind(this),
@@ -42,7 +44,7 @@ class BookingDialog extends CancelAndHelpDialog {
 
     async bookingLocationStep(stepContext) {
 
-        console.log('bookingDialog.bookingLocationStep');
+        console.log('bookingDialog.bookingLocationStep()');
      
         const bookingDetails = stepContext.options;
 
@@ -59,10 +61,14 @@ class BookingDialog extends CancelAndHelpDialog {
      */
 
     async bookingMeetingRoomStep(stepContext) {
-        console.log('bookingDialog.bookingMeetingRoomStep');
+        console.log('bookingDialog.bookingMeetingRoomStep()');
+
         const bookingDetails = stepContext.options;
-        if (!bookingDetails.meetingRoom) {
-            return await stepContext.prompt(TEXT_PROMPT, { prompt: 'Which meeting room do you want to book?' });
+        bookingDetails.location = stepContext.result;
+
+        if (!bookingDetails.meetingRoom) {            
+            return await stepContext.prompt(CHOICE_PROMPT, { prompt: 'Which meeting room do you want to book?', choices: ChoiceFactory.toChoices(['F001', 'F002', 'F003'])});
+    //        return await stepContext.prompt(TEXT_PROMPT, { prompt: 'Which meeting room do you want to book?' });
         } else {
             return await stepContext.next(bookingDetails.meetingRoom);
         }
@@ -74,8 +80,10 @@ class BookingDialog extends CancelAndHelpDialog {
      */
 
     async bookingDateStep(stepContext) {
-        console.log('bookingDialog.bookingDateStep');
+        console.log('bookingDialog.bookingDateStep()');
+
         const bookingDetails = stepContext.options;
+        bookingDetails.meetingRoom = stepContext.result.value;
 
         if (!bookingDetails.meetingDate || this.isAmbiguous(bookingDetails.meetingDate)) {
             return await stepContext.beginDialog(DATE_RESOLVER_DIALOG, { date: bookingDetails.meetingDate });
@@ -90,10 +98,14 @@ class BookingDialog extends CancelAndHelpDialog {
      */
 
     async bookingTimeStep(stepContext) {
-        console.log('bookingDialog.bookingTimeStep');
+        console.log('bookingDialog.bookingTimeStep()');
+        
         const bookingDetails = stepContext.options;
+        bookingDetails.meetingDate = stepContext.result;
+
         if (!bookingDetails.meetingTime || this.isAmbiguousTime(bookingDetails.meetingTime)) {
-             return await stepContext.beginDialog(DATE_RESOLVER_DIALOG, { date: bookingDetails.meetingTime });
+            return await stepContext.beginDialog(TEXT_PROMPT, {prompt: 'When do you need a meeting room?' });
+            //        return await stepContext.beginDialog(DATE_RESOLVER_DIALOG, { date: bookingDetails.meetingTime });
         } else {
              return await stepContext.next(bookingDetails.meetingTime);
         }
@@ -106,8 +118,13 @@ class BookingDialog extends CancelAndHelpDialog {
      */
 
     async bookingDurationStep(stepContext) {
-        console.log('bookingDialog.bookingDurationStep');
+        console.log('bookingDialog.bookingDurationStep()');
+
         const bookingDetails = stepContext.options;
+        bookingDetails.meetingTime = stepContext.result.value;
+
+        console.log(bookingDetails);
+
         if (!bookingDetails.duration) {
             return await stepContext.prompt(TEXT_PROMPT, { prompt: 'How long do you need a meeting room for?' });
         } else {
@@ -120,17 +137,28 @@ class BookingDialog extends CancelAndHelpDialog {
      * Confirm the information the user has provided.
      */
     async bookingConfirmStep(stepContext) {
-        console.log('bookingDialog.bookingConfirmStep');
+        console.log('bookingDialog.bookingConfirmStep()');
+
         const bookingDetails = stepContext.options;
 
+        console.log(bookingDetails);
+       
         // Capture the results of the previous step
         bookingDetails.duration = stepContext.result;
 
+        // Confirm booking
+        const timeProperty = new TimexProperty('T'+bookingDetails.meetingTime);           
+        const meetingTimeMsg = timeProperty.toNaturalLanguage(new Date(Date.now()).getTime);
+
+        const meetingDateProperty = new TimexProperty(bookingDetails.meetingDate);
+        const meetingDateMsg = meetingDateProperty.toNaturalLanguage(new Date(Date.now()));
+
         const duration = (parseInt(bookingDetails.duration))*1000;  // convert duration (sec) to milliseconds. Required for Humanize-Duration library.
         const meetingDurationMsg = humanizeDuration(duration);
+        
+        const msg = `Please confirm, I have your bookinng for meeting room ${bookingDetails.meetingRoom} (${bookingDetails.location}) on ${meetingDateMsg} @ ${meetingTimeMsg} for ${meetingDurationMsg}.`;
 
-        const msg = `Please confirm, I have your bookinng for meeting room ${bookingDetails.meetingRoom} (${bookingDetails.location}) on ${bookingDetails.meetingDate} @ ${bookingDetails.meetingTime} for ${meetingDurationMsg}.`;
-
+        
         // Offer a YES/NO prompt.
         return await stepContext.prompt(CONFIRM_PROMPT, { prompt: msg });
     }
@@ -139,7 +167,7 @@ class BookingDialog extends CancelAndHelpDialog {
      * Complete the interaction and end the dialog.
      */
     async bookingFinalStep(stepContext) {
-        console.log('bookingDialog.bookingFinalStep');
+        console.log('bookingDialog.bookingFinalStep()');
         if (stepContext.result === true) {
             const bookingDetails = stepContext.options;
 

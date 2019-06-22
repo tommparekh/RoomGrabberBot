@@ -21,7 +21,10 @@ class DateResolverDialog extends CancelAndHelpDialog {
     }
 
     async initialStep(stepContext) {
+        console.log('DateResolverDialog.initialStep()');
         const timex = stepContext.options.date;
+
+  //      console.log(stepContext);
 
         const promptMsg = 'On what date would you like to book the meeting room?';
         const repromptMsg = "I'm sorry, for best results, please enter your meeting date including the month, day and year.";

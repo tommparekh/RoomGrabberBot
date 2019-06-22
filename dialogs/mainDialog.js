@@ -17,7 +17,7 @@ class MainDialog extends ComponentDialog {
     constructor(logger) {
         super('MainDialog');
 
-        console.log('mainDialog.constructor');
+        console.log('mainDialog.constructor()');
 
         if (!logger) {
             logger = console;
@@ -46,7 +46,7 @@ class MainDialog extends ComponentDialog {
      * @param {*} accessor
      */
     async run(turnContext, accessor) {
-        console.log('mainDialog.run');
+        console.log('mainDialog.run()');
         const dialogSet = new DialogSet(accessor);
         dialogSet.add(this);
 
@@ -63,7 +63,7 @@ class MainDialog extends ComponentDialog {
      * Note that the sample LUIS model will only recognize Paris, Berlin, New York and London as airport cities.
      */
     async introStep(stepContext) {
-        console.log('mainDialog.introStep');
+        console.log('mainDialog.introStep()');
         if (!process.env.LuisAppId || !process.env.LuisAPIKey || !process.env.LuisAPIHostName) {
             await stepContext.context.sendActivity('NOTE: LUIS is not configured. To enable all capabilities, add `LuisAppId`, `LuisAPIKey` and `LuisAPIHostName` to the .env file.');
             return await stepContext.next();
@@ -78,7 +78,7 @@ class MainDialog extends ComponentDialog {
      * Then, it hands off to the bookingDialog child dialog to collect any remaining details.
      */
     async actStep(stepContext) {
-        console.log('mainDialog.actStep');
+        console.log('mainDialog.actStep()');
 
         let bookingDetails = {};
 
@@ -96,7 +96,6 @@ class MainDialog extends ComponentDialog {
 
         this.logger.log('LUIS extracted these booking details:', bookingDetails);
 
-
         // Run the BookingDialog giving it whatever details we have from the LUIS call, it will fill out the remainder.
         return await stepContext.beginDialog('bookingDialog', bookingDetails);
     }
@@ -107,29 +106,25 @@ class MainDialog extends ComponentDialog {
      */
     async finalStep(stepContext) {
 
-        console.log('mainDialog.finalStep');
+        console.log('mainDialog.finalStep()');
 
         // If the child dialog ("bookingDialog") was cancelled or the user failed to confirm, the Result here will be null.
         if (stepContext.result) {
             const result = stepContext.result;
+
+            console.log(result);
         
             // Now we have all the booking details.
-
             // This is where calls to the booking AOU service or database would go.
-
             // If the call to the booking service was successful tell the user.
-            const timeProperty = new TimexProperty('T'+result.meetingTime);
-       
-            const meetingTimeMsg = timeProperty.toNaturalLanguage(new Date(Date.now()).getTime);
-   
-            const meetingDateProperty = new TimexProperty(result.meetingDate);
-    
-            const meetingDateMsg = meetingDateProperty.toNaturalLanguage(new Date(Date.now()));
-            
+
+            const timeProperty = new TimexProperty('T'+result.meetingTime);       
+            const meetingTimeMsg = timeProperty.toNaturalLanguage(new Date(Date.now()).getTime);   
+            const meetingDateProperty = new TimexProperty(result.meetingDate);    
+            const meetingDateMsg = meetingDateProperty.toNaturalLanguage(new Date(Date.now()));            
             const duration = (parseInt(result.duration))*1000;  // convert duration (sec) to milliseconds. Required for Humanize-Duration library.
             const meetingDurationMsg = humanizeDuration(duration);
-            
-            
+                        
             /*  moment.js required
                 let meetingDurationMsg = moment.duration(duration, 'seconds').humanize();
             */
