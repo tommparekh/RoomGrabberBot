@@ -85,6 +85,9 @@ class MainDialog extends LogoutDialog {
          // Get the token from the previous step. Note that we could also have gotten the
         // token directly from the prompt itself. There is an example of this in the next method.
         const tokenResponse = stepContext.result;
+
+        console.log(`tokenResponse -----> ${tokenResponse}`);
+ 
         if (tokenResponse) {
             await stepContext.context.sendActivity('You are now logged in.');
             if (!process.env.LuisAppId || !process.env.LuisAPIKey || !process.env.LuisAPIHostName) {
@@ -104,6 +107,8 @@ class MainDialog extends LogoutDialog {
         console.log('mainDialog.commandStep()');
 
         stepContext.values['command'] = stepContext.result;
+
+        console.log(`mainDialog.commandStep() ---------> ${stepContext.result}`);
 
         // Call the prompt again because we need the token. The reasons for this are:
         // 1. If the user is already logged in we do not need to store the token locally in the bot and worry
