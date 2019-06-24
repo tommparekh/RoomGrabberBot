@@ -1,0 +1,18 @@
+{
+    "name": "RoomGrabberBotConfig",
+    "description": "",
+    "services": [
+        {
+            "type": "endpoint",
+            "appId": "c7de2da0-5a50-4a00-a835-d9210eca4b75",
+            "appPassword": "b}u[&y!^JCFaEe3S&&8GHRlv",
+            "endpoint": "http://localhost:3978/api/messages",
+            "id": "f7046550-9555-11e9-a131-b16a8449c665",
+            "name": "RoomGrabberBot"
+        }
+    ],
+    "padlock": "",
+    "version": "2.0",
+    "path": "C:\\Mihir\\hackathon\\RoomGrabberBot\\RoomGrabberBotConfig.bot",
+    "overrides": null
+}
