@@ -2,7 +2,7 @@
 // Licensed under the MIT License.
 
 const { TimexProperty } = require('@microsoft/recognizers-text-data-types-timex-expression');
-const { ConfirmPrompt, TextPrompt, WaterfallDialog,  ChoiceFactory, ChoicePrompt } = require('botbuilder-dialogs');
+const { ConfirmPrompt, TextPrompt, WaterfallDialog, ChoiceFactory, ChoicePrompt } = require('botbuilder-dialogs');
 const { CancelAndHelpDialog } = require('./cancelAndHelpDialog');
 const { DateResolverDialog } = require('./dateResolverDialog');
 
@@ -25,7 +25,7 @@ class BookingDialog extends CancelAndHelpDialog {
             .addDialog(new ChoicePrompt(CHOICE_PROMPT))
             .addDialog(new DateResolverDialog(DATE_RESOLVER_DIALOG))
             .addDialog(new WaterfallDialog(WATERFALL_DIALOG, [
-				this.bookingLocationStep.bind(this),
+                this.bookingLocationStep.bind(this),
                 this.bookingMeetingRoomStep.bind(this),
                 this.bookingDateStep.bind(this),
                 this.bookingTimeStep.bind(this),
@@ -37,15 +37,15 @@ class BookingDialog extends CancelAndHelpDialog {
         this.initialDialogId = WATERFALL_DIALOG;
     }
 
-   /**
-     * 
-     * If booking location is not provided, prompt for one. 
-     */
+    /**
+      * 
+      * If booking location is not provided, prompt for one. 
+      */
 
     async bookingLocationStep(stepContext) {
 
         console.log('bookingDialog.bookingLocationStep()');
-     
+
         const bookingDetails = stepContext.options;
 
         if (!bookingDetails.location) {
@@ -55,10 +55,10 @@ class BookingDialog extends CancelAndHelpDialog {
         }
     }
 
-        /**
-     * 
-     * If booking meeting room is not provided, prompt for one. 
-     */
+    /**
+ * 
+ * If booking meeting room is not provided, prompt for one. 
+ */
 
     async bookingMeetingRoomStep(stepContext) {
         console.log('bookingDialog.bookingMeetingRoomStep()');
@@ -66,9 +66,9 @@ class BookingDialog extends CancelAndHelpDialog {
         const bookingDetails = stepContext.options;
         bookingDetails.location = stepContext.result;
 
-        if (!bookingDetails.meetingRoom) {            
-            return await stepContext.prompt(CHOICE_PROMPT, { prompt: 'Which meeting room do you want to book?', choices: ChoiceFactory.toChoices(['F001', 'F002', 'F003'])});
-    //        return await stepContext.prompt(TEXT_PROMPT, { prompt: 'Which meeting room do you want to book?' });
+        if (!bookingDetails.meetingRoom) {
+            return await stepContext.prompt(CHOICE_PROMPT, { prompt: 'Which meeting room do you want to book?', choices: ChoiceFactory.toChoices(['F001', 'F002', 'F003']) });
+            //        return await stepContext.prompt(TEXT_PROMPT, { prompt: 'Which meeting room do you want to book?' });
         } else {
             return await stepContext.next(bookingDetails.meetingRoom);
         }
@@ -85,6 +85,11 @@ class BookingDialog extends CancelAndHelpDialog {
         const bookingDetails = stepContext.options;
         bookingDetails.meetingRoom = stepContext.result.value;
 
+        if (!bookingDetails.meetingRoom || bookingDetails.meetingRoom == ''
+            || bookingDetails.meetingRoom == 'undefined') {
+            bookingDetails.meetingRoom = 'DefaultRoom';
+        }
+
         if (!bookingDetails.meetingDate || this.isAmbiguous(bookingDetails.meetingDate)) {
             return await stepContext.beginDialog(DATE_RESOLVER_DIALOG, { date: bookingDetails.meetingDate });
         } else {
@@ -99,17 +104,17 @@ class BookingDialog extends CancelAndHelpDialog {
 
     async bookingTimeStep(stepContext) {
         console.log('bookingDialog.bookingTimeStep()');
-        
+
         const bookingDetails = stepContext.options;
         bookingDetails.meetingDate = stepContext.result;
 
         if (!bookingDetails.meetingTime || this.isAmbiguousTime(bookingDetails.meetingTime)) {
-            return await stepContext.beginDialog(TEXT_PROMPT, {prompt: 'When do you need a meeting room?' });
+            return await stepContext.beginDialog(TEXT_PROMPT, { prompt: 'When do you need a meeting room?' });
             //        return await stepContext.beginDialog(DATE_RESOLVER_DIALOG, { date: bookingDetails.meetingTime });
         } else {
-             return await stepContext.next(bookingDetails.meetingTime);
+            return await stepContext.next(bookingDetails.meetingTime);
         }
-        
+
     }
 
     /**
@@ -123,7 +128,7 @@ class BookingDialog extends CancelAndHelpDialog {
         const bookingDetails = stepContext.options;
         bookingDetails.meetingTime = stepContext.result.value;
 
-       if (!bookingDetails.duration) {
+        if (!bookingDetails.duration) {
             return await stepContext.prompt(TEXT_PROMPT, { prompt: 'How long do you need a meeting room for?' });
         } else {
             return await stepContext.next(bookingDetails.duration);
@@ -140,23 +145,23 @@ class BookingDialog extends CancelAndHelpDialog {
         const bookingDetails = stepContext.options;
 
         console.log(bookingDetails);
-       
+
         // Capture the results of the previous step
         bookingDetails.duration = this.convertToDuration(stepContext.result);
 
         // Confirm booking
-        const timeProperty = new TimexProperty('T'+bookingDetails.meetingTime);           
+        const timeProperty = new TimexProperty('T' + bookingDetails.meetingTime);
         const meetingTimeMsg = timeProperty.toNaturalLanguage(new Date(Date.now()).getTime);
 
         const meetingDateProperty = new TimexProperty(bookingDetails.meetingDate);
         const meetingDateMsg = meetingDateProperty.toNaturalLanguage(new Date(Date.now()));
 
-        const duration = (parseInt(bookingDetails.duration))*1000;  // convert duration (sec) to milliseconds. Required for Humanize-Duration library.
+        const duration = (parseInt(bookingDetails.duration)) * 1000;  // convert duration (sec) to milliseconds. Required for Humanize-Duration library.
         const meetingDurationMsg = humanizeDuration(duration);
-        
+
         const msg = `Please confirm, I have your bookinng for meeting room ${bookingDetails.meetingRoom} (${bookingDetails.location}) on ${meetingDateMsg} @ ${meetingTimeMsg} for ${meetingDurationMsg}.`;
 
-        
+
         // Offer a YES/NO prompt.
         return await stepContext.prompt(CONFIRM_PROMPT, { prompt: msg });
     }
@@ -180,27 +185,27 @@ class BookingDialog extends CancelAndHelpDialog {
         console.log('bookingDialog.convertToDuration()');
 
         console.log(duration);
-        
+
         const durH1 = duration.indexOf('Hr');
         const durH2 = duration.indexOf('hr');
 
         console.log(durH2);
 
-        if (durH1>1 || durH2>1) {
+        if (durH1 > 1 || durH2 > 1) {
 
             console.log('true');
 
-            if(durH1>1) {
-               const hr =  duration.substring(0, durH1);
-               return (parseInt(hr)*3600);
-            } else if (durH2>1) {
+            if (durH1 > 1) {
+                const hr = duration.substring(0, durH1);
+                return (parseInt(hr) * 3600);
+            } else if (durH2 > 1) {
                 console.log('durH2');
                 const hr = duration.substring(0, durH2);
 
                 console.log(hr);
 
-                return (parseInt(hr)*3600);
-            }else {
+                return (parseInt(hr) * 3600);
+            } else {
                 return undefined;
             }
         }
@@ -208,14 +213,14 @@ class BookingDialog extends CancelAndHelpDialog {
         const durM1 = duration.indexOf('Min');
         const durM2 = duration.indexOf('min');
 
-        if (durM1>1 || durH2>1) {
-            if(durM1>1) {
-               const min =  duration.substring(0, durM1);
-               return (parseInt(min)*60);
-            } else if (durM2>1) {
+        if (durM1 > 1 || durH2 > 1) {
+            if (durM1 > 1) {
+                const min = duration.substring(0, durM1);
+                return (parseInt(min) * 60);
+            } else if (durM2 > 1) {
                 const min = duration.substring(0, durM2);
-                return (parseInt(min)*60);
-            }else {
+                return (parseInt(min) * 60);
+            } else {
                 return undefined;
             }
         }
@@ -227,14 +232,14 @@ class BookingDialog extends CancelAndHelpDialog {
         console.log(`bookingDialog.isAmbiguousTime with timex is T${timex}`);
         timex = 'T' + timex;
         const timexPropery = TimexProperty.fromTime(timex);
-    
+
         return !timexPropery.types.has('time');
     }
 
     isAmbiguous(timex) {
         console.log(`bookingDialog.isAmbiguous with timex is ${timex}`);
         const timexPropery = new TimexProperty(timex);
-  
+
         return !timexPropery.types.has('definite');
     }
 }
