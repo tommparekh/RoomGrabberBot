@@ -84,7 +84,7 @@ class BookingDialog extends CancelAndHelpDialog {
 
         const bookingDetails = stepContext.options;
         bookingDetails.meetingRoom = stepContext.result.value;
-
+        
         if (!bookingDetails.meetingRoom || bookingDetails.meetingRoom == ''
             || bookingDetails.meetingRoom == 'undefined') {
             bookingDetails.meetingRoom = 'DefaultRoom';

@@ -29,7 +29,13 @@ class DateResolverDialog extends CancelAndHelpDialog {
         const promptMsg = 'On what date would you like to book the meeting room?';
         const repromptMsg = "I'm sorry, for best results, please enter your meeting date including the month, day and year.";
 
+        console.log(`***************bookingDialog.bookingDateStep 1. stepContext.options.date = ${timex}`)
+
         if (!timex) {
+
+            console.log(`***************bookingDialog.bookingDateStep 2. timex is undefined.`)
+
+
             // We were not given any date at all so prompt the user.
             return await stepContext.prompt(DATETIME_PROMPT,
                 {
@@ -39,9 +45,11 @@ class DateResolverDialog extends CancelAndHelpDialog {
         } else {
             // We have a Date we just need to check it is unambiguous.
 
-            console.log(`***************dateResolverDialog.timex value = ${timex}`)
-
             const timexProperty = new TimexProperty(timex);
+
+            console.log(`***************bookingDialog.bookingDateStep 3. TimexProperty = ${timexProperty}`)
+
+
             if (!timexProperty.types.has('definite')) {
                 // This is essentially a "reprompt" of the data we were given up front.
                 return await stepContext.prompt(DATETIME_PROMPT, { prompt: repromptMsg });

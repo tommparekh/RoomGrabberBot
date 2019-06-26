@@ -108,8 +108,6 @@ class MainDialog extends LogoutDialog {
 
         stepContext.values['command'] = stepContext.result;
 
-        console.log(`mainDialog.commandStep() ---------> ${stepContext.result}`);
-
         // Call the prompt again because we need the token. The reasons for this are:
         // 1. If the user is already logged in we do not need to store the token locally in the bot and worry
         // about refreshing it. We can always just call the prompt again to get the token.
