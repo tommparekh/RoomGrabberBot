@@ -44,7 +44,7 @@ class DialogAndWelcomeBot extends DialogBot {
         this.onUnrecognizedActivityType(async (context, next) => {
             console.log('dialogAndWelcomeBot.onUnrecognizedActivityType()');
             console.log(`Activity Type = ${context.activity.type}`);
-            if (context.activity.type === ActivityTypes.Invoke) {
+            if (context.activity.type === 'invoke') {
                 await this.dialog.run(context, this.dialogState);
             }
             await next();
