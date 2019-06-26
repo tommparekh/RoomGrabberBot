@@ -39,6 +39,15 @@ class DialogAndWelcomeBot extends DialogBot {
             await next();
         });
 
+        this.onUnrecognizedActivityType(async (context, next) => {
+            console.log('dialogAndWelcomeBot.onUnrecognizedActivityType()');
+
+            if (context.activity.type === ActivityTypes.Invoke) {
+                await this.dialog.run(context, this.dialogState);
+            }
+            await next();
+        });
+
     }
 }
 
