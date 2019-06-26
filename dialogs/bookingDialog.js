@@ -194,9 +194,7 @@ class BookingDialog extends CancelAndHelpDialog {
                const hr =  duration.substring(0, durH1);
                return (parseInt(hr)*3600);
             } else if (durH2>1) {
-
                 console.log('durH2');
-
                 const hr = duration.substring(0, durH2);
 
                 console.log(hr);

@@ -14,6 +14,7 @@ class DialogAndWelcomeBot extends DialogBot {
 
         this.onMembersAdded(async (context, next) => {
             console.log('DialogAndWelcomeBot.onMembersAdded()');
+            console.log(`Activity Type = ${context.activity.type}`);
             const membersAdded = context.activity.membersAdded;
             for (let cnt = 0; cnt < membersAdded.length; cnt++) {
                 if (membersAdded[cnt].id !== context.activity.recipient.id) {
@@ -31,6 +32,7 @@ class DialogAndWelcomeBot extends DialogBot {
         this.onTokenResponseEvent(async (context, next) => {
             console.log('Running dialog with Token Response Event Activity.');
             console.log('dialogAndWelcomeBot.onTokenResponseEvent()');
+            console.log(`Activity Type = ${context.activity.type}`);
 
             // Run the Dialog with the new Token Response Event Activity.
             await this.dialog.run(context, this.dialogState);
@@ -41,7 +43,7 @@ class DialogAndWelcomeBot extends DialogBot {
 
         this.onUnrecognizedActivityType(async (context, next) => {
             console.log('dialogAndWelcomeBot.onUnrecognizedActivityType()');
-
+            console.log(`Activity Type = ${context.activity.type}`);
             if (context.activity.type === ActivityTypes.Invoke) {
                 await this.dialog.run(context, this.dialogState);
             }
