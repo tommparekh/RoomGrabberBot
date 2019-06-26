@@ -109,7 +109,7 @@ class BookingDialog extends CancelAndHelpDialog {
         bookingDetails.meetingDate = stepContext.result;
 
         if (!bookingDetails.meetingTime || this.isAmbiguousTime(bookingDetails.meetingTime)) {
-            return await stepContext.beginDialog(TEXT_PROMPT, { prompt: 'When do you need a meeting room?' });
+            return await stepContext.beginDialog(TEXT_PROMPT, { prompt: 'What time do you need a meeting room?' });
             //        return await stepContext.beginDialog(DATE_RESOLVER_DIALOG, { date: bookingDetails.meetingTime });
         } else {
             return await stepContext.next(bookingDetails.meetingTime);

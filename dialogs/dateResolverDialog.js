@@ -38,6 +38,9 @@ class DateResolverDialog extends CancelAndHelpDialog {
                 });
         } else {
             // We have a Date we just need to check it is unambiguous.
+
+            console.log(`***************dateResolverDialog.timex value = ${timex}`)
+
             const timexProperty = new TimexProperty(timex);
             if (!timexProperty.types.has('definite')) {
                 // This is essentially a "reprompt" of the data we were given up front.
