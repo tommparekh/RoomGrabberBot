@@ -59,15 +59,15 @@ class DateResolverDialog extends CancelAndHelpDialog {
     }
 
     async finalStep(stepContext) {
-        console.log(`dateTimePromptValidator.finalStep()`);
+        console.log(`dateTimePromptValidator.finalStep() stepContext = ${stepContext}`);
         const timex = stepContext.result[0].timex;
         return await stepContext.endDialog(timex);
     }
 
     async dateTimePromptValidator(promptContext) {
 
-        console.log(`dateTimePromptValidator.promptContext.recognized = ${promptContext.recognized}`);
-        console.log(`dateTimePromptValidator.promptContext.recognized.value = ${promptContext.recognized.value}`);
+        console.log(`Typeof dateTimePromptValidator.promptContext.recognized = ${typeof promptContext.recognized}`);
+     //   console.log(`dateTimePromptValidator.promptContext.recognized.value = ${promptContext.recognized.value}`);
 
         if (promptContext.recognized.succeeded) {
             // This value will be a TIMEX. And we are only interested in a Date so grab the first result and drop the Time part.
