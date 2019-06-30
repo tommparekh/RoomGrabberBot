@@ -88,7 +88,7 @@ class BookingDialog extends CancelAndHelpDialog {
         if (!bookingDetails.meetingRoom || bookingDetails.meetingRoom == ''
             || bookingDetails.meetingRoom == 'undefined') {
             bookingDetails.meetingRoom = 'DefaultRoom';
-        }
+        } 
 
         if (!bookingDetails.meetingDate || this.isAmbiguous(bookingDetails.meetingDate)) {
             return await stepContext.beginDialog(DATE_RESOLVER_DIALOG, { date: bookingDetails.meetingDate });
@@ -188,9 +188,7 @@ class BookingDialog extends CancelAndHelpDialog {
 
         const durH1 = duration.indexOf('Hr');
         const durH2 = duration.indexOf('hr');
-
-        console.log(durH2);
-
+   
         if (durH1 > 1 || durH2 > 1) {
 
             console.log('true');
@@ -201,9 +199,7 @@ class BookingDialog extends CancelAndHelpDialog {
             } else if (durH2 > 1) {
                 console.log('durH2');
                 const hr = duration.substring(0, durH2);
-
                 console.log(hr);
-
                 return (parseInt(hr) * 3600);
             } else {
                 return undefined;
@@ -213,7 +209,11 @@ class BookingDialog extends CancelAndHelpDialog {
         const durM1 = duration.indexOf('Min');
         const durM2 = duration.indexOf('min');
 
-        if (durM1 > 1 || durH2 > 1) {
+        console.log(durM1);
+        console.log(durM2);
+
+
+        if (durM1 > 1 || durM2 > 1) {
             if (durM1 > 1) {
                 const min = duration.substring(0, durM1);
                 return (parseInt(min) * 60);

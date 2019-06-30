@@ -4,11 +4,11 @@
     "services": [
         {
             "type": "endpoint",
-            "appId": "c7de2da0-5a50-4a00-a835-d9210eca4b75",
-            "appPassword": "b}u[&y!^JCFaEe3S&&8GHRlv",
+            "appId": "a454bc2c-f50d-4a78-9949-82393750a258",
+            "appPassword": "3VjJpx$i&!RDEzhYOK8$^;#HQ",
             "endpoint": "http://localhost:3978/api/messages",
             "id": "f7046550-9555-11e9-a131-b16a8449c665",
-            "name": "RoomGrabberBot"
+            "name": "RoomGrabberBotV1"
         }
     ],
     "padlock": "",
