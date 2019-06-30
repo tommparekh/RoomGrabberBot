@@ -67,6 +67,7 @@ class DateResolverDialog extends CancelAndHelpDialog {
     async dateTimePromptValidator(promptContext) {
 
         console.log(`Typeof dateTimePromptValidator.promptContext.recognized = ${typeof promptContext.recognized}`);
+        console.log(`Typeof dateTimePromptValidator.promptContext = ${typeof promptContext}`);
      //   console.log(`dateTimePromptValidator.promptContext.recognized.value = ${promptContext.recognized.value}`);
 
         if (promptContext.recognized.succeeded) {
