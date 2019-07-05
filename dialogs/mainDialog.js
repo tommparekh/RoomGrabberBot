@@ -81,25 +81,26 @@ class MainDialog extends LogoutDialog {
      */
     async introStep(stepContext) {
         console.log('mainDialog.introStep()');
- 
-         // Get the token from the previous step. Note that we could also have gotten the
+
+        // Get the token from the previous step. Note that we could also have gotten the
         // token directly from the prompt itself. There is an example of this in the next method.
         const tokenResponse = stepContext.result;
 
         console.log(`tokenResponse -----> ${tokenResponse}`);
- 
+
         if (tokenResponse) {
             await stepContext.context.sendActivity('You are now logged in.');
             if (!process.env.LuisAppId || !process.env.LuisAPIKey || !process.env.LuisAPIHostName) {
                 await stepContext.context.sendActivity('NOTE: LUIS is not configured. To enable all capabilities, add `LuisAppId`, `LuisAPIKey` and `LuisAPIHostName` to the .env file.');
                 return await stepContext.next();
             }
-    
+
             return await stepContext.prompt('TextPrompt', { prompt: 'What can I help you with today?\nSay something like "Book a meeting room for tomorrow at 2:00 PM for 1 hr. at New Jersey"' });
+        } else {
+            await stepContext.context.sendActivity('Login was not successful please try again.');
         }
-        await stepContext.context.sendActivity('Login was not successful please try again.');
         return await stepContext.endDialog();
- 
+
     }
 
 
@@ -119,7 +120,7 @@ class MainDialog extends LogoutDialog {
         return await stepContext.beginDialog(OAUTH_PROMPT);
     }
 
-    
+
 
     /**
      * Second step in the waterall.  This will use LUIS to attempt to extract the origin, destination and travel dates.

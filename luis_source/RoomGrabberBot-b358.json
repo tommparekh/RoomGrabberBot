@@ -1,0 +1,4156 @@
+{
+  "luis_schema_version": "3.2.0",
+  "versionId": "0.1",
+  "name": "RoomGrabberBot-b358",
+  "desc": "A LUIS model that uses intent and entities.",
+  "culture": "en-us",
+  "tokenizerVersion": "1.0.0",
+  "intents": [
+    {
+      "name": "Book_Meeting_Room"
+    },
+    {
+      "name": "Cancel"
+    },
+    {
+      "name": "Greetings"
+    },
+    {
+      "name": "None"
+    }
+  ],
+  "entities": [
+    {
+      "name": "duration",
+      "inherits": {
+        "domain_name": "Calendar",
+        "model_name": "Duration"
+      },
+      "roles": []
+    },
+    {
+      "name": "location",
+      "inherits": {
+        "domain_name": "Calendar",
+        "model_name": "Location"
+      },
+      "roles": [
+        "meetingRoom",
+        "Office",
+        "City",
+        "State",
+        "Floor"
+      ]
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "prebuiltEntities": [
+    {
+      "name": "datetimeV2",
+      "roles": []
+    },
+    {
+      "name": "personName",
+      "roles": []
+    }
+  ],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [],
+  "utterances": [
+    {
+      "text": "<at>roomgrabber</at> book a meeting room",
+      "intent": "Book_Meeting_Room",
+      "entities": []
+    },
+    {
+      "text": "<at>roomgrabber</at> book a room",
+      "intent": "Book_Meeting_Room",
+      "entities": []
+    },
+    {
+      "text": "<at>roomgrabber</at> book meeting room",
+      "intent": "Book_Meeting_Room",
+      "entities": []
+    },
+    {
+      "text": "<at>roomgrabberbot</at> book a room",
+      "intent": "Book_Meeting_Room",
+      "entities": []
+    },
+    {
+      "text": "<at>roomgrabberbotv1</at> book a room",
+      "intent": "Book_Meeting_Room",
+      "entities": []
+    },
+    {
+      "text": "2 hours meeting with ladawn padilla at 5 on tuesday",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 0,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "2 pm meeting tomorrow - who else is going",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "2 pm meeting with who",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "accept all meetings for christmas party next week.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "accept dinner",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "accept my meeting at 7pm today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "accept my meeting at tomorrow 10am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "accept the appointment from 3pm to 5pm.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "accept the appointment on january 18th in palace meeting room.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "accept the event for tonight.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "accept the event on feb. 18 in beijing.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 31,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "accept the meeting held on tomorrow at room 301",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "accept the meeting with mary and tom held on wednesday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "accept this appointment with jane and mary on next tuesday.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "accept this lunch meeting.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "accept today's event at 3pm.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "accept today's meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add an appointment on may 8th at shanghai",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 33,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "add applied motion to my calendar 9 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add appt with helen ding for dinner on march 5th at 5 pm at dennys",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 60,
+          "endPos": 65
+        }
+      ]
+    },
+    {
+      "text": "add appt with mike li for dinner on march 5th at 5 pm at dennys",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 57,
+          "endPos": 62
+        }
+      ]
+    },
+    {
+      "text": "add balboa practice to my calendar at 3 30 today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add ballet to my calendar wednesday at five thirty to six thirty pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add baseball game on friday to calendar",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add chicago bulls versus washington wizards to my calendar tomorrow at seven pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add choir practice on saturday at 7 pm to my personal calendar",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add choreography to my family calendar",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add chorus concert to calendar for may 1st at 3 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add church to personal calendar on sundays at 9",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add coffee on august 12th at 2 pm with herman for one hour",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 50,
+          "endPos": 57
+        }
+      ]
+    },
+    {
+      "text": "add dance on tuesday at four o clock",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add date night on the 5th at 7pm every month",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add dentist appointment on tuesday june at the 1st clinic",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 47,
+          "endPos": 56
+        }
+      ]
+    },
+    {
+      "text": "add dentist appointment to my calendar at 3:30 for the 8th of may",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add dentist appointment to my calendar tomorrow from 3 to 4:30",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add dentist appointments to my calendar at 3 thirty p m",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add dinner to personal calendar",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add dinner with mom to personal",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add doctors appointment on march 13 at 2 pm at the original health clinic",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 51,
+          "endPos": 72
+        }
+      ]
+    },
+    {
+      "text": "add doctors appointment on march 13 at 2 pm at the tiptop virginia beach clinic",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 51,
+          "endPos": 78
+        }
+      ]
+    },
+    {
+      "text": "add go shopping with john meng on the calendar",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add haircut to my google calendar tomorrow at 2 30",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add hope middle school meet and greet on my calendar",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 4,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "add kane s dr appt to calendar for 3 friday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add maple beach to my calendar at 10 on sunday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add megan training to calendar on july 4th at 11 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add office party on march 8th from 6 p to 9 p",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add order cabinets to my calendar today at 2 o clock",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add pay credit card to calendar may twentieth",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add pay pearl fees on my calendar tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add picture day at school to my calendar for friday, november the 8th from 8 am to 9:30 am",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 19,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "add solo gig at civic hall on the 7th of march at 8 pm",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 16,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "add team meeting to my calendar at 10pm with xiaoming wang",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add the enviomential protection meeting from 9 am to 11 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add the lunch with my colleague naomi from 12 to 2 in my personal calendar",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add ultimate frisbee on sunday at 2 pm for 2 hours",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 43,
+          "endPos": 49
+        }
+      ]
+    },
+    {
+      "text": "add vacation to my calendar from july 4th until july 29th",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add work to calendar at 3 pm on friday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add work to calendar friday from 8 for an hour",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 39,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "add work to calendar sunday 10 till 5",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add work to calendar thursday 8 30 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add work to my calendar monday 6 am to 11 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add work to my calendar today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "alert attendees of dinner meeting that i will be late",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "alert quality control meeting participants that i am 15 minutes late",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "alert quality control meeting participants that the meeting will be 30 minutes later",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i available at 10 am on monday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i available on monday at 9 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i available tomorrow at 5 30 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i busy on the 6th of february",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i busy on this weekend",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i busy this weekend",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i free at 5 pm today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i free at 7 p . m .",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i free for drinks monday at 5",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i free for drinks monday at 5 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i free for hiking on saturday at 8 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i free from 3 pm - 10 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i free on monday at 9 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i free on saturday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i free on the 12th of july",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i free to drive with kim on thurs at 3 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i free today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i free tomorrow 3 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i free tonight",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i free tuesday at 7 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "any meeting room available",
+      "intent": "Book_Meeting_Room",
+      "entities": []
+    },
+    {
+      "text": "append dad's birthday every july 21st",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "appending group meeting next monday at 11am for an hour",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 48,
+          "endPos": 54
+        }
+      ]
+    },
+    {
+      "text": "at 10 am do i have a 30 minutes meeting",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 21,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "attend the lunch meeting at 10:30 am.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "attend the meeting held at 3pm next tuesday at the conference center.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "attendees who will join the 5 pm meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "bing find me a conference room in the bravern this afternoon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "book a meeting",
+      "intent": "Book_Meeting_Room",
+      "entities": []
+    },
+    {
+      "text": "book a meeting between 2 and 3 tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "book a meeting between 2:30pm and 4:45pm tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "book a meeting in guangzhou at 6am on march 5th",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 18,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "book a meeting room for tomorrow at 2 pm for 1 hr at nj",
+      "intent": "Book_Meeting_Room",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 45,
+          "endPos": 48
+        },
+        {
+          "entity": "location",
+          "startPos": 53,
+          "endPos": 54
+        }
+      ]
+    },
+    {
+      "text": "book a meeting room for tomorrow at 2:00 pm for 1 hr",
+      "intent": "Book_Meeting_Room",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 48,
+          "endPos": 51
+        }
+      ]
+    },
+    {
+      "text": "book a meeting room for tomorrow at 2:00 pm for 1 hr in new jersey",
+      "intent": "Book_Meeting_Room",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 48,
+          "endPos": 51
+        },
+        {
+          "entity": "location",
+          "role": "State",
+          "startPos": 56,
+          "endPos": 65
+        }
+      ]
+    },
+    {
+      "text": "book a meeting room for tomorrow at 2:00 pm for 1 hr. at new jersey",
+      "intent": "Book_Meeting_Room",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 48,
+          "endPos": 51
+        },
+        {
+          "entity": "location",
+          "role": "State",
+          "startPos": 57,
+          "endPos": 66
+        }
+      ]
+    },
+    {
+      "text": "book a meeting room for tomorrow at 2:00 pm for 1 hr. at new jersey, voorhees",
+      "intent": "Book_Meeting_Room",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 48,
+          "endPos": 51
+        },
+        {
+          "entity": "location",
+          "role": "State",
+          "startPos": 57,
+          "endPos": 66
+        }
+      ]
+    },
+    {
+      "text": "book a meeting room for tomorrow at 2:00 pm for 1 hr. at voorhees",
+      "intent": "Book_Meeting_Room",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 48,
+          "endPos": 51
+        },
+        {
+          "entity": "location",
+          "role": "City",
+          "startPos": 57,
+          "endPos": 64
+        }
+      ]
+    },
+    {
+      "text": "book a meeting room for tomorrow at 2:00 pm for 1 hr. in philadelphia",
+      "intent": "Book_Meeting_Room",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 48,
+          "endPos": 51
+        },
+        {
+          "entity": "location",
+          "role": "City",
+          "startPos": 57,
+          "endPos": 68
+        }
+      ]
+    },
+    {
+      "text": "book a meeting room for tomorrow at 2:00 pm for 1.5 hr. at new jersey",
+      "intent": "Book_Meeting_Room",
+      "entities": [
+        {
+          "entity": "location",
+          "role": "State",
+          "startPos": 59,
+          "endPos": 68
+        }
+      ]
+    },
+    {
+      "text": "book a meeting room for tomorrow at 2:00 pm for 20 mins at new jersey",
+      "intent": "Book_Meeting_Room",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 48,
+          "endPos": 54
+        },
+        {
+          "entity": "location",
+          "role": "State",
+          "startPos": 59,
+          "endPos": 68
+        }
+      ]
+    },
+    {
+      "text": "book a meeting room for tomorrow at 2:00 pm for 30 mins at new jersey",
+      "intent": "Book_Meeting_Room",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 48,
+          "endPos": 54
+        },
+        {
+          "entity": "location",
+          "role": "State",
+          "startPos": 59,
+          "endPos": 68
+        }
+      ]
+    },
+    {
+      "text": "book a meeting room l123 for tomorrow at 2:00 pm for 30 mins at new jersey",
+      "intent": "Book_Meeting_Room",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 53,
+          "endPos": 59
+        },
+        {
+          "entity": "location",
+          "role": "State",
+          "startPos": 64,
+          "endPos": 73
+        }
+      ]
+    },
+    {
+      "text": "book a recurring 1x1 meeting on the first monday of each month",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "book a rom",
+      "intent": "Book_Meeting_Room",
+      "entities": []
+    },
+    {
+      "text": "book a room",
+      "intent": "Book_Meeting_Room",
+      "entities": []
+    },
+    {
+      "text": "book blue meeting room",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "book meeting room",
+      "intent": "Book_Meeting_Room",
+      "entities": []
+    },
+    {
+      "text": "book meeting room for next week at 12:00 pm for 3 hours",
+      "intent": "Book_Meeting_Room",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 48,
+          "endPos": 54
+        }
+      ]
+    },
+    {
+      "text": "book room",
+      "intent": "Book_Meeting_Room",
+      "entities": []
+    },
+    {
+      "text": "book room for 12/2/19 from 12:00 pm to 2:00 pm in teaneck office",
+      "intent": "Book_Meeting_Room",
+      "entities": [
+        {
+          "entity": "location",
+          "role": "City",
+          "startPos": 50,
+          "endPos": 56
+        }
+      ]
+    },
+    {
+      "text": "book room for today",
+      "intent": "Book_Meeting_Room",
+      "entities": []
+    },
+    {
+      "text": "book room for tomorrow at 2 pm",
+      "intent": "Book_Meeting_Room",
+      "entities": []
+    },
+    {
+      "text": "book room in nj for tomorrow at 2 pm",
+      "intent": "Book_Meeting_Room",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 13,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "book room in teaneck, nj headquarter office at 7th floor",
+      "intent": "Book_Meeting_Room",
+      "entities": [
+        {
+          "entity": "location",
+          "role": "City",
+          "startPos": 13,
+          "endPos": 19
+        },
+        {
+          "entity": "location",
+          "role": "State",
+          "startPos": 22,
+          "endPos": 23
+        },
+        {
+          "entity": "location",
+          "role": "Office",
+          "startPos": 25,
+          "endPos": 35
+        },
+        {
+          "entity": "location",
+          "role": "Floor",
+          "startPos": 47,
+          "endPos": 55
+        }
+      ]
+    },
+    {
+      "text": "book room on 8th floor",
+      "intent": "Book_Meeting_Room",
+      "entities": [
+        {
+          "entity": "location",
+          "role": "Floor",
+          "startPos": 13,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "book the conference room for thursday at one i want to meet with benjamin",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "boom room at new jersey at 12:00 pm for 1 hr",
+      "intent": "Book_Meeting_Room",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 13,
+          "endPos": 22
+        },
+        {
+          "entity": "duration",
+          "startPos": 40,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "bye",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "calendar for today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call into marketing meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call the morning breifing conference number",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call the weekly marketing meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you change it to 5 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you check my dad 's calendar for free time this week",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you move this appointment to 5pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you reserve room 649 right away",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you tell me about master chief",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you tell me if my husband is free on sunday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you tell me something about shakespeare",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel 1 pm staff meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel appointment today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel booking",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "cancel dinner",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel doctor ' s appointment monday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel event tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel lunch next wednesday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel meeting with abigail 3 pm today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel meeting with bob marlon 3pm today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel my adventureworks trip to seattle",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 33,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "cancel my appointment at 9 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel my appointment for october 4",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel my driving lesson tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel my meeting at shanghai on monday at 10 am",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 21,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "cancel my singing appointment on monday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel my three o'clock appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel the group meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel the pickup food from ted",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel the untitled event on may twenty eighth",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel today ' s appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel tomorrow ' s plan",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change 4pm lunch appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change big event to tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change dentist appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change dentist appt to an hour later",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change developmental agenda for lunch tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change it to 5pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change lunch appt to 2",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change lunch date from 11 - 12 to 12 - 1 30",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change marathon training from 8:00am to 1:00pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change marketing meeting from every tuesday to every wednesdays",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change meeting from 2-3pm to 4-5pm today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change meeting from 2pm-3pm to 4pm-5pm today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change my 11pm appointment's location to green park",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 41,
+          "endPos": 50
+        }
+      ]
+    },
+    {
+      "text": "change my 3pm event to 4pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change my 6pm event to 7pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change my 7 30 pm appointment to 8 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change my 7pm event to 6pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change my 8 till 9 appointment to 11 till 12",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change my 9 30 till 10 30 appointment to 9 30 till 5",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change my appointmnet with sarah to 5 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change my dentist appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change my dentist appointment from 3:30 to 4",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change my meeting at night to tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change my vacation from ending on friday to monday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change recital to start half an hour earlier",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change shave tomorrow 8 30",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change the appointment ending at 4 to end at 5 instead",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change the end date of my trip from the 3rd to the 4th",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change the end time of my 3 o'clock meeting to 3 30 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change the location of my singing appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change the meeting which will start at 2 pm to 3 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change the time to eleven thirty am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change the title of my 11am appointment to soccer practice",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change thursday team meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change today 's meeting from 6pm to tomorrow 9am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change today 's meeting from 6pm to tomorrow 9pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change tomorrow ' s appointment from 10am to wednesday at 9 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "check janice 's calendar for this weekend",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "check meeting room for tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "check on the time to see when i go to school and pick up mark",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "clear all of my appointments today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "clear all the appointments from my calendar for today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "clear my calendar for january 29th",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "clear my schedule for tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "clear my schedule today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "connect me to 10 00 conf call with bryan",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "connect me to marketing meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "connect me to the budget meeting conference call",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "connect me to the marketing meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "connect me with my 2 o clock meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "connect to conference call now",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "connect to weekly marketing meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create a calendar appointment at 3:30 tomorrow for half an hour",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 51,
+          "endPos": 62
+        }
+      ]
+    },
+    {
+      "text": "create a event with eden roth at 4pm today for 30 mins",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 47,
+          "endPos": 53
+        }
+      ]
+    },
+    {
+      "text": "create a meeting at 7:00pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create a meeting at 8am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create a meeting at 9:35am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create a meeting for tomorrow 6pm with lucy chen",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create a meeting from 9pm to tomorrow 6am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create an appointment with doctor lu from 8:30 am to 10:00 am tomorrow morning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create appointment for 30 minutes",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 23,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "create appointment from tuesday to wednesday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create calendar : tomorrow morning from 9 to 11 at 1103 room for internal meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "decline my meeting on monday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete birthday calendar",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete my schedule for today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "detail about tomorrow's meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "dial marketing meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "did hellen come to 3 pm's meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "did mark sign up to the tomorrow's meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "did martin come to today's meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "do i have any appointments today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "do i have any free time this weekend",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "do i have any meetings today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "do i have anything from 11 to 2",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "do i have anything on wednesday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "do i have anything today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "drop my appointment for monday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "duration of machine learning talk",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "exit",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "extend meeting from 9 am to 12 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find a free meeting room for next tuesday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find a meeting about group meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find a meeting about plan",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find a meeting at 7pm from melissa",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find a meeting from darren about status update",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find a meeting from deborah about team session",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find a meeting subject daily meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find a meeting with subject weekly report",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find a meeting with title second lesson from amanda",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find a meeting with title sharing from steven",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find an available meeting room from 3 to 5 tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find attendees who will attend 8 o ' clock meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find me the meetings at 6",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find me the meetings at 9 o'clock",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find the meeting around 2 to 6pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find the meeting around 5 to 8 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "good afternoon",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "good evening",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "good morning",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "help me to book a meeting room from 10 am to 3 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "help me to book the room 102",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "how are you",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "how can i book a meeting room",
+      "intent": "Book_Meeting_Room",
+      "entities": []
+    },
+    {
+      "text": "how long do i have for lunch",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how long is it until the 14th of march",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how long is my 4 o'clock meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how long is my dentist appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how long is my facial time",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how long is my lunch today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how long is my meeting at 4",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how long is the movie jurassic world",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how long till disneyland paris",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how long until christmas",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how long until the social",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how long will my dentist appointment last",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many days is it until christmas",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many days left until the opening ceremony",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many days till april",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many days till christmas",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many days until june the fifteenth",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many days until june the fifteenth 2019",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many days until march twenty six",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many days until my doctor ' s appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many days until thanksgiving",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many days until the 10th of december",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many hours left till the closing ceremony",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many hours until my doc appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much longer do i have before pick up mary from school",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much longer do i have until pick up john from school",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much time as of now is set for the bill payments",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much time before lunch",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much time between schedule thursday meetings next week",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much time do i have for a lunch break today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much time do i have for lunch today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much time do i have to take back the movie",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much time do i have until i have to meet with michael",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much time do i have until i start the meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much time do i have until my doc appt",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much time do we have for lunch today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much time for lunch today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much time is open today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much time is set for the bill payments",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much time is there before office meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much time is there for errands during my lunch break",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much time out on lunch",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much time until noon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much time will i have to pick up groceries",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need to know about my date with jimmy",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to attend the meeting for review",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to book meeting room",
+      "intent": "Book_Meeting_Room",
+      "entities": []
+    },
+    {
+      "text": "i want to meet with bruce lee so book the conference room for thursday at one",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to meet with donna please book for thursday the conference room at one",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i would like to know if my mother is available today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "ignore",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "i'll attend the meeting at 2pm tomorrow in room 304",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i'll attend the meeting this afternoon.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i'll attend this upcoming event in redmond.",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 35,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "i'm not available next monday afternoon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is carolyn available tuesday afternoon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is debra available on saturday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is gerald busy this weekend",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is grace available for the daily scrum meeting with engineering team from 10 to 11",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is my lunch long enough for errands",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is nicholas available friday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is raymond free on monday evening",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is rebecca busy thursday at 4",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is russell free on friday at 4pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is saturday free",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is theresa free october 9th",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is this room busy at 5 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is this room busy tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is virginia free on monday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "join budget conference call",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "join current budget conf call",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "join current conference",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "join current conference call",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "join meeting now",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "join next link meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "join the budget meeting conference call",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "join the next lync meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "let 5 pm meeting starting at 3",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "let me see who will attend party planning meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "list the participants for the 2 pm meeting tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "location of 11 am meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make appointment for 5 30 tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make appointment for 7 30",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make appointment on monday.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make appointment to play squash on thursday at 7 20",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make appointment to see doctor culver august the 22nd 2013 1 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make appt for 3 pm on christmas",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make me a dentist appointment wednesday at two forty five",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make me an appointment for next weekend",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make me an appointment for ten forty next monday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make me an appointment for the next week thursday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make me an appointment tomorrow at 2 30 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make the appointment ending at 2 go until 4 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make the meeting ending at 10 go until 11",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "march 15 dinner at refectory at 6 pm",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 19,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "meet ming wang for lunch on tuesday at noon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "meet with a.j. lee saturday at 3 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "meet with carol lee at home on march 10th at 4 pm",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 23,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "meeting at 3 pm today locations",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "meeting with ben randie tomorrow at noon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "meeting with ellen fung on monday at 9 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "meeting with jia li monday 3 30",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "meeting with morrison sun at 2 pm saturday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "meeting with morrison yang at 4",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "minutes in lunch break",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "move 3pm meeting to 4pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "move appt with rebecca to next week",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "move meeting from 9pm-10pm to 8pm-9pm today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "move my 10 past 10 doctor ' s appointment to 10",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "move my 10pm meeting to 9pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "move my 12 pm meeting to 2",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "move my 4 pm to 5 pm today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "move my 9 am doctor ' s appointment to 10 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "move my 9pm meeting to 8pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "move my meeting to 6pm from 7pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "move my text meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "move party planning meeting from saturday to friday at 1pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "move shoe appointment to tuesday at one",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "need a room",
+      "intent": "Book_Meeting_Room",
+      "entities": []
+    },
+    {
+      "text": "need help",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "need meeting room",
+      "intent": "Book_Meeting_Room",
+      "entities": []
+    },
+    {
+      "text": "need to book a meeting room for tomorrow @ 1:00 pm for 1 hour",
+      "intent": "Book_Meeting_Room",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 55,
+          "endPos": 60
+        }
+      ]
+    },
+    {
+      "text": "new appointment for tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "new appointment next wednesday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "new appointment today 6 pm see dead people",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "new appointment tomorrow at 3 pm at sunken",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 36,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "new location for meeting this afternoon let others attendees know meeting is now in room 100",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "no, i already have meeting 3pm tomorrow afternoon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "nokia conference room join",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "not right, schedule it as 1x1 meeting with yolanda",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "not this conference room, please change",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "not this saturday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "notify friday's 2 pm that we are cancelling the meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "notify people of meeting on tue that it will begin 15-30 min later",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "ola",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "on saturday at 7 thirty p m",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "personal calendar 5/1/2013 meet mom for yard sale",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please advise i am late for 3 pm meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please alert 3 o ' clock meeting attendees",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please create a meeting from 2 to 3",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please find another meeting room",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please move this to 3 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please open my date with angela and tell me about it",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please schedule a yoga class with my sister at 5pm every friday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please schedule an all hands meeting for 2 hours",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 41,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "please show me how much time i have to run errands",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please tell me how long i have for lunch",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "postpone my 4 pm meeting today until 5 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "postpone my four p. m. meeting today until five p. m.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "push my trip july 16th out 5 days",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put anniversary on my calendar",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put captains in my calendar for saturday evening",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put dance class appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put dance on my calendar for monday 7 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put dance on my calendar from 6 to 7",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put dental appointment on my calendar saturday march 22nd at twelve pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put dentist appointment in my calendar for tomorrow at one pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put dentist appointment in my calendar tuesday 2 45 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put dentist on my calendar for this thursday at 10 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put doctor s appointment in my calendar for 5 forty next thursday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put eye doctor appointment saturday at 11 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put hair appointment on calendar",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put insanity on my calendar at 6 30 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put jason work on my calendar thursday 9 am to 5 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put jimmy on to doctor ken on october 20th at 3 30",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put julie hay in my calendar for tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put mathematics paper one on tuesday 13",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put shopping day on april 1st at 10 am on calendar",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put swimming in my calendar tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put swimming tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put tennis game for friday at 1 on calendar",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put test appointment in my calendar tomorrow at 7",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put work on my calendar tomorrow from 8 30 to 5 30",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put yoga on my calendar for mondays and wednesdays at 3 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "remind all attendees of tomorrow ' s lunch that we have changed the venue",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "remove dentist appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "remove final tutoring from my calendar",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reschedule appointment with jennifer to next week",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reschedule my 3:30 dentist appointment to 4",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reschedule my 3:30 dentist appointment today for 4pm tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reschedule my interview on monday to 1 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reschedule the 2 pm class to half past 2",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reserve room 101 now",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reserve room 258",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reserve room 313 right away",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reserve the conference room for 1 pm thursday because i need to have a meeting with amber",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reserve the conference room for 3pm tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "room 100 is location for this afternoon ' s meeting please notify others",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "running late for the board meeting alert catherine dennis and all the other attendees",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a azure workshop from 9am to tomorrow 5pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a breakfast meeting at 8 am tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a buisness lunch for my department at campus restaurant on wednesday at 11 30 am",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 47,
+          "endPos": 63
+        }
+      ]
+    },
+    {
+      "text": "schedule a chiropractors appointment on july 7th at 4 o clock",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a dental appointment tomorrow afternoon at five thirty pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a dentist appointment for tomorrow night at 7 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a dinner for tonight at 8 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a doctor s office appointment for march 12th",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a doctors appointment at 15 30",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a doctors appointment with madden on march 12th at 4 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a lunch date with mom every tuesday at noon for the next 5 weeks",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a lunch meeting with my lead",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a massage on tuesday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a meeting for next thursday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a meeting for this friday 11 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a meeting for tomorrow at 5 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a meeting on nov. 3 from 3-4pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a meeting tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a meeting with han lu 8 am next tuesday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a meeting with ryan from 3-4pm on october 25th",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a run at the lake with madden",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 22,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "schedule a shopping trip with shawntia on friday at 5 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a soccer game for next friday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a vet appointment at 9 am on saturday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a visit to the market this saturday at 10 o clock",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule a workout with madden to my calendar",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment for 10 30 in the morning on january 20 1st",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment for 9 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment for me on tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment for me today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment for me tomorrow at 3 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment for noon tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment for one o clock today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment for saturday at 8 dinner with madden",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment for saturday at one 30 pm to measure house",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment for thursday at 3 pm haircut",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment for tomorrow at one o clock",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment from june 18th to june 20th",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment on monday from noon to 4 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment on november 5th at 3 30",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment on october 31st",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment on thursday october second at 8 forty am mom s medical appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment to call meredith at 12",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment to groom my dogs at petco on friday at 6 pm",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 44,
+          "endPos": 48
+        }
+      ]
+    },
+    {
+      "text": "schedule an appointment to see cj on thursday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment with madden at 10 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment with madden for wednesday the 20 4th at 9 30 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment with madden today at 2 o clock",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an appointment with madden tomorrow at 5 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an event for scrum with madden at 10 am saturday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule an event for the 5th of july",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule appointment at eight p m tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule appointment for madden account payment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule appointment yearly check up friday march one 10 am one hour",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 60,
+          "endPos": 67
+        }
+      ]
+    },
+    {
+      "text": "schedule art show on calendar for noon on march 6th",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule ben baig for saturday evening",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule camping for friday to sunday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule college for tomorrow at 5 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule conference room with mary cooper for thursday at one",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule dentist appointment with madden for may the 20th at 3 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule dinner on the 8th at 6 thirty p m",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule dinner with madden at 6 pm on june 4th at spring restaurant",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 51,
+          "endPos": 67
+        }
+      ]
+    },
+    {
+      "text": "schedule dinner with madden every friday at 5 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule dry cleaning pick up at three thirty pm today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule group meeting with madden on march 3rd at 4 00 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule hair appointment on monday at 2 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule holiday for the thirty first of july",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule holiday on the 31st july",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule lunch with madden for 11 30 am on wednesday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule lunch with madden on tuesday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule lunch with pura at noon on wednesday may 20 minutes",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "duration",
+          "startPos": 50,
+          "endPos": 59
+        }
+      ]
+    },
+    {
+      "text": "schedule mechanics exam at 12 pm on friday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule miranda s graduation from 11 to 3 on may 28th",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule my vacation from today 5pm to tomorrow 5pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule therapy appointment at 8 o clock",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule wanda s graduation for saturday at 11 o clock",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule wedding anniversary on friday evening",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule work for 7 am tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule work on thursday the thirty first from three to seven thirty",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "schedule yoga class from 2 pm to 3 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "search a meeting subject project proposal rehearsal",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "search the meeting with title employee orientation",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "send reminder of 9 am meeting to all participants 15 minutes later",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "set up an appointment with pura tomorrow at 3 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "set up meeting with pura for every tuesday at 1 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "setup meeting room tomorrow at 12 to 13",
+      "intent": "Book_Meeting_Room",
+      "entities": []
+    },
+    {
+      "text": "should you schedule to after lunch",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show me brenda 's schedule for friday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show me my calendar for monday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show me my schedule tonight",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show me the calendar at night",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show me the duration of the weekly sharing",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show me the meeting about briefing session",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show me the meeting about online session",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show me the place of the work smart training",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show me victoria 's calendar for monday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show me who will attend family gathering",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show me who will be at planning meeting tomorrow at 2 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show my schedule at night",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "tell me about my meeting today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "tell me about my planned trip",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "tell me about my schedule with afternoon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "tell me about my sunday schedule",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "tell me all about dinner date with stephanie",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "tell me how long is my 4 oclock meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "tell me how long is today ' s lunch break",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "tell me the duration of the product introducation",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "tell me the events scheduled at calendar constitution hall",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 41,
+          "endPos": 57
+        }
+      ]
+    },
+    {
+      "text": "this is review meeting, not 1x1 meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "this meeting should be changed to tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "time for lunch errands",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "today ' s lunch will be how long",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "total lunch break time today please",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "update lunch appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "update meeting from 8am-12pm to 7am-11am today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "update my calendar",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "update my calendar from 11 to 12：30 today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "update my calendar from 2 pm to 4 pm today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "update my calendar from 6pm to 7pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "update my camping appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "update my tomorrow 6pm meeting to 7pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "update party",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what ' s going on this weekend",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what ' s happening today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what ' s in my calendar for today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what ' s my 1st appointment tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what ' s my 1st meeting tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what ' s my schedule for tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what ' s my schedule like tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what ' s my schedule tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what ' s on my calendar for today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what ' s on my calendar today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what ' s on my schedule for tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what ' s on my schedule today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what ' s the meeting today between 10 and 12:00",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what allotted time is for hair dresser",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what am i doing next week",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what am i doing on june ninth",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what am i doing tonight",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what appointments do i have tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are my appointments for this week",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are my appointments today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are my meetings at night",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the particulars for the picnic next week",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the plans for the dinner date with stacey",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what day is lego land scheduled for",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what did the sister say about meeting on sunday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what do i have for today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what do i have from 2 to 4 on saturday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what do i have from monday through wednesday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what do i have going on today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what do i have on my calendar today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what do i have on sunday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what do i have this afternoon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what do i have to do this afternoon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what do i have to do tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what do i have tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what have i got on tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what i am doing next week",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what i'm doing this weekend",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is anna 's availability next tuesday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is destiny ' s event for next week",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is henry doing on monday at noon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is logan 's schedule this week",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is my 1st meeting today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is my schedule for tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is my schedule tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is on my calendar today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is timothy doing today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what meetings do i have next week",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what the place of the weekly meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time do i have work tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time do i work today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time is beth over today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time is my cooking class tonight",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time is my first meeting tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time is my meeting today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time is my mobile devices exam tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time is my team meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time is oshwin's interview",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time is the ice cream social",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time is the trade show this saturday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's going on this week",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's happening tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's my first meeting tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "whats up",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "when ' s my 1st appointment tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when ' s my 1st meeting tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when ' s my doctor ' s appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when ' s my next doctors appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when am i free today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when am i watching england",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when do i break up from school",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 24,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "when do i have exam",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when do i have free time today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when do i have time to create a weekly meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when do i work tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when is aaron free tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when is concert on my calendar",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when is lunch with frank",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when is my 1st meeting tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when is my daily stand up with ethan",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when is my fifth kick-off",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when is my next hair cut appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when is my next trip to new york",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 24,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "when is my physio",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when is my picnic lunch today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when is ncaa basketball today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when is samuel available tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when is sports day for the girls",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when is the next dentist appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when is the social",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when is the wedding tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when's my haircut",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when's my next trip",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where am i going this weekend",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where am i going tonight",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where am i on may the twenty first",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where am i tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where are my meetings today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where do i go for my meeting tomorrow at 11 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where do i go tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where do i have to be today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where do i need to go today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is dinner with abigail liu",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is margot lunch",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is meeting tomorrow at 11 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is my 11 am appointment tomorrow happening",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is my 11 am meeting tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is my dentist appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is my eleven o'clock meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is my first appointment tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is my fourth event with brandon friday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is my fourth event with christopher on thursday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is my next dentist appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is my third shiproom with tiffany",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is the meeting at 11 am tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is the performance review meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is tomorrow ' s 11 am meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is tomorrow meeting at 11 am",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is tomorrow 's event",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "which meeting room is available",
+      "intent": "Book_Meeting_Room",
+      "entities": []
+    },
+    {
+      "text": "which weekend am i shopping with sarah",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "which will be my next flight",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who ' s in my 1st meeting today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who am i meeting at 10 am tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who am i meeting for dinner",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who else is going to the 2pm meeting tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who else will be in banking meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who is attending 2 pm meeting tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who is attending the meeting on wednesday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who is coming the the meeting tomorrow at 2 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who is going to attend the meeting tomorrow at 2 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who is going to the meeting at 2 pm tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who is going to tomorrow ' s meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who is my first meeting with tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who is my morning meeting with",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who is on my list for the 2 pm meeting tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who is participating tomorrow at 2 pm meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who is the 2 pm meeting with",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who shall be joining the meeting tomorrow at 2 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who will attend the meeting at 4",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who will be at the kids game",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who will be attending picnic",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who will be in the banking meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will amber join office meeting today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will amy be at today ' s meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will ed be in the finance meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will ethan, yutian and k.j. be at the picnic",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will george be in the hr meeting at 1 o' clock",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will jane be at the 3 pm meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will john be at marketing meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will johnny be at office meeting today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will nancy be at the morning briefing meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will nicholas be attending the management meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will paul be going to the meeting on friday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will roy be at our weekly team meeting",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will thomas be in insurance meeting monday at noon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will tyler be free on friday",
+      "intent": "None",
+      "entities": []
+    }
+  ],
+  "settings": []
+}

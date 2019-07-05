@@ -93,3 +93,23 @@ To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](htt
 - [Channels and Bot Connector Service](https://docs.microsoft.com/en-us/azure/bot-service/bot-concepts?view=azure-bot-service-4.0)
 - [Restify](https://www.npmjs.com/package/restify)
 - [dotenv](https://www.npmjs.com/package/dotenv)
+
+# I used,
+- https://docs.microsoft.com/en-us/azure/bot-service/bot-service-scenario-enterprise-productivity?view=azure-bot-service-3.0
+
+- https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs/40.timex-resolution
+
+- https://github.com/microsoft/BotBuilder-Samples/blob/master/samples/typescript_nodejs/13.core-bot/src/bots/dialogAndWelcomeBot.ts
+
+
+- https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-howto-v4-luis?view=azure-bot-service-4.0&tabs=javascript
+
+- https://chatbotslife.com/how-to-use-the-cognitive-service-from-microsoft-luis-with-bot-builder-44067a4744b9
+
+- https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-authentication?view=azure-bot-service-4.0&tabs=aadv2%2Ccsharp%2Cbot-oauth
+
+- https://docs.microsoft.com/en-us/azure/bot-service/nodejs/bot-builder-nodejs-recognize-intent-luis?view=azure-bot-service-3.0
+
+- https://github.com/microsoft/botbuilder-tools/tree/master/packages/Chatdown
+
+- https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-authentication?view=azure-bot-service-4.0&tabs=aadv1%2Ccsharp%2Cbot-oauth

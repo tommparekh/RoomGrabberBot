@@ -25,18 +25,26 @@ class CancelAndHelpDialog extends ComponentDialog {
     }
 
     async interrupt(innerDc) {
-        const text = innerDc.context.activity.text.toLowerCase();
+        console.log(`cancelAndHelpDialog.interrupt()  innerDc = ${innerDc}`);
 
-        switch (text) {
-        case 'help':
-        case '?':
-            await innerDc.context.sendActivity('[ This is where to send sample help to the user... ]');
-            return { status: DialogTurnStatus.waiting };
-        case 'cancel':
-            await innerDc.context.sendActivity('Cancelling');
-        case 'quit':
-            await innerDc.context.sendActivity('Cancelling');
-            return await innerDc.cancelAllDialogs();
+        if (innerDc) {
+   //         console.log(`cancelAndHelpDialog activity text = ${innerDc.context.activity.text}`);
+
+            if(innerDc.context.activity.text) {
+                const text = innerDc.context.activity.text.toLowerCase();
+
+                switch (text) {
+                case 'help':
+                case '?':
+                    await innerDc.context.sendActivity('[ This is where to send sample help to the user... ]');
+                    return { status: DialogTurnStatus.waiting };
+                case 'cancel':
+                    await innerDc.context.sendActivity('Cancelling');
+                case 'quit':
+                    await innerDc.context.sendActivity('Cancelling');
+                    return await innerDc.cancelAllDialogs();
+                }
+            }
         }
     }
 }

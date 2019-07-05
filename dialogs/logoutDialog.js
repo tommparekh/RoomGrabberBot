@@ -24,7 +24,10 @@ class LogoutDialog extends ComponentDialog {
     }
 
     async interrupt(innerDc) {
+        console.log(`logoutDialog.interrupt() with innerDc = ${innerDc}`);
+ //       console.log(`logout activity type = ${innerDc.context.activity.type}`);
         if (innerDc.context.activity.type === ActivityTypes.Message) {
+ //           console.log(`logout activity text = ${innerDc.context.activity.text}`);
             const text = innerDc.context.activity.text ? innerDc.context.activity.text.toLowerCase() : '';
             if (text === 'logout') {
                 // The bot adapter encapsulates the authentication processes.
@@ -34,6 +37,8 @@ class LogoutDialog extends ComponentDialog {
                 return await innerDc.cancelAllDialogs();
             }
         }
+
+        console.log(`Exiting logoutDialog.interrupt()`);
     }
 }
 
