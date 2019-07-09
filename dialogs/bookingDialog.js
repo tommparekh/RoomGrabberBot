@@ -126,7 +126,7 @@ class BookingDialog extends CancelAndHelpDialog {
         console.log('bookingDialog.bookingDurationStep()');
 
         const bookingDetails = stepContext.options;
-        bookingDetails.meetingTime = stepContext.result.value;
+        bookingDetails.meetingTime = stepContext.result;
 
         if (!bookingDetails.duration) {
             return await stepContext.prompt(TEXT_PROMPT, { prompt: 'How long do you need a meeting room for?' });
@@ -151,7 +151,14 @@ class BookingDialog extends CancelAndHelpDialog {
 
         // Confirm booking
         const timeProperty = new TimexProperty('T' + bookingDetails.meetingTime);
-        const meetingTimeMsg = timeProperty.toNaturalLanguage(new Date(Date.now()).getTime);
+        const meetingTimeMsg = bookingDetails.meetingTime;
+        
+      //  console.log(`meetingTime is : ${bookingDetails.meetingTime}, timeProperty is : ${timeProperty},`);
+      /*  if (timeProperty != undefined || timeProperty != '') {
+            console.log('wrong condition');
+            meetingTimeMsg = timeProperty.toNaturalLanguage(new Date(Date.now()).getTime);
+        }
+        */
 
         const meetingDateProperty = new TimexProperty(bookingDetails.meetingDate);
         const meetingDateMsg = meetingDateProperty.toNaturalLanguage(new Date(Date.now()));
@@ -182,16 +189,12 @@ class BookingDialog extends CancelAndHelpDialog {
 
     convertToDuration(duration) {
 
-        console.log('bookingDialog.convertToDuration()');
-
-        console.log(duration);
-
+        console.log('bookingDialog.convertToDuration() \n');
+    
         const durH1 = duration.indexOf('Hr');
         const durH2 = duration.indexOf('hr');
-   
-        if (durH1 > 1 || durH2 > 1) {
 
-            console.log('true');
+        if (durH1 > 1 || durH2 > 1) {
 
             if (durH1 > 1) {
                 const hr = duration.substring(0, durH1);
@@ -209,11 +212,7 @@ class BookingDialog extends CancelAndHelpDialog {
         const durM1 = duration.indexOf('Min');
         const durM2 = duration.indexOf('min');
 
-        console.log(durM1);
-        console.log(durM2);
-
-
-        if (durM1 > 1 || durM2 > 1) {
+         if (durM1 > 1 || durM2 > 1) {
             if (durM1 > 1) {
                 const min = duration.substring(0, durM1);
                 return (parseInt(min) * 60);
@@ -225,14 +224,13 @@ class BookingDialog extends CancelAndHelpDialog {
             }
         }
 
-        return undefined;
+        return duration;
     }
 
     isAmbiguousTime(timex) {
         console.log(`bookingDialog.isAmbiguousTime with timex is T${timex}`);
         timex = 'T' + timex;
         const timexPropery = TimexProperty.fromTime(timex);
-
         return !timexPropery.types.has('time');
     }
 

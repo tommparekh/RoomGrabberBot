@@ -94,7 +94,7 @@ To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](htt
 - [Restify](https://www.npmjs.com/package/restify)
 - [dotenv](https://www.npmjs.com/package/dotenv)
 
-# I used,
+# Mihir used,
 - https://docs.microsoft.com/en-us/azure/bot-service/bot-service-scenario-enterprise-productivity?view=azure-bot-service-3.0
 
 - https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs/40.timex-resolution
@@ -113,3 +113,17 @@ To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](htt
 - https://github.com/microsoft/botbuilder-tools/tree/master/packages/Chatdown
 
 - https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-authentication?view=azure-bot-service-4.0&tabs=aadv1%2Ccsharp%2Cbot-oauth
+
+# Steps
+
+    # Azure
+        - Create a Bot resource in Azure (RG, SVC Plan, SVC, Web Bot)
+        - Create AAD App Registration
+        - Update OAuth Configurations
+        - Build CD/CI
+        - Add Teams Channel
+
+    # Teams
+        - Add App Studio
+        - Configure Bot via Manifest Editor
+

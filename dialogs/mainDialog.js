@@ -164,8 +164,9 @@ class MainDialog extends LogoutDialog {
             // This is where calls to the booking AOU service or database would go.
             // If the call to the booking service was successful tell the user.
 
-            const timeProperty = new TimexProperty('T' + result.meetingTime);
-            const meetingTimeMsg = timeProperty.toNaturalLanguage(new Date(Date.now()).getTime);
+       //     const timeProperty = new TimexProperty('T' + result.meetingTime);
+       //     const meetingTimeMsg = timeProperty.toNaturalLanguage(new Date(Date.now()).getTime);
+            const meetingTimeMsg = result.meetingTime;
             const meetingDateProperty = new TimexProperty(result.meetingDate);
             const meetingDateMsg = meetingDateProperty.toNaturalLanguage(new Date(Date.now()));
             const duration = (parseInt(result.duration)) * 1000;  // convert duration (sec) to milliseconds. Required for Humanize-Duration library.
