@@ -65,18 +65,25 @@ class DateResolverDialog extends CancelAndHelpDialog {
     }
 
     async dateTimePromptValidator(promptContext) {
-        
-        console.log(`Typeof dateTimePromptValidator.promptContext = ${Object.prototype.toString.call(promptContext)}`);
+      //  console.log(`JSON conversion for dateTimePromptValidator.promptContext : ${JSON.stringify(promptContext)}`);
+      
      //   console.log(`dateTimePromptValidator.promptContext.recognized.value = ${promptContext.recognized.value}`);
-
+    
         if (promptContext.recognized.succeeded) {
             // This value will be a TIMEX. And we are only interested in a Date so grab the first result and drop the Time part.
             // TIMEX is a format that represents DateTime expressions that include some ambiguity. e.g. missing a Year.
             const timex = promptContext.recognized.value[0].timex.split('T')[0];
 
+      //      console.log(`dateTimePromptValidator.succeeded is : ${promptContext.recognized.value[0].type}`);
+
+     //      const tmp = new TimexProperty(timex);
+     //       console.log(`JSON conversion for dateTimePromptValidator.tmp : ${JSON.stringify(tmp)}`);
+
             // If this is a definite Date including year, month and day we are good otherwise reprompt.
             // A better solution might be to let the user know what part is actually missing.
-            return new TimexProperty(timex).types.has('definite');
+     //       return new TimexProperty(timex).types.has('definite');
+            return (promptContext.recognized.value[0].type == "date");  
+              
         } else {
             return false;
         }
