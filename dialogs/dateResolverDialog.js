@@ -47,8 +47,8 @@ class DateResolverDialog extends CancelAndHelpDialog {
 
             const timexProperty = new TimexProperty(timex);
 
-            console.log(`***************bookingDialog.bookingDateStep 3. TimexProperty = ${timexProperty}`)
-
+            this.logger.log(`***************   bookingDialog.bookingDateStep  TimexProperty = ${JSON.stringify(timexProperty)} ***************`);
+            this.logger.log('\n \n \n');
             if (!timexProperty.types.has('definite')) {
                 // This is essentially a "reprompt" of the data we were given up front.
                 return await stepContext.prompt(DATETIME_PROMPT, { prompt: repromptMsg });
@@ -74,7 +74,7 @@ class DateResolverDialog extends CancelAndHelpDialog {
             // TIMEX is a format that represents DateTime expressions that include some ambiguity. e.g. missing a Year.
             const timex = promptContext.recognized.value[0].timex.split('T')[0];
 
-            console.log(`dateTimePromptValidator.recognized type is : ${JSON.stringify(promptContext.recognized.value[0])}`);
+            this.logger.log(`dateTimePromptValidator.recognized type is : ${JSON.stringify(promptContext.recognized.value[0])}`);
 
      //      const tmp = new TimexProperty(timex);
      //       console.log(`JSON conversion for dateTimePromptValidator.tmp : ${JSON.stringify(tmp)}`);
