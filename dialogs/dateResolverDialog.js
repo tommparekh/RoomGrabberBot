@@ -74,7 +74,7 @@ class DateResolverDialog extends CancelAndHelpDialog {
             // TIMEX is a format that represents DateTime expressions that include some ambiguity. e.g. missing a Year.
             const timex = promptContext.recognized.value[0].timex.split('T')[0];
 
-      //      console.log(`dateTimePromptValidator.succeeded is : ${promptContext.recognized.value[0].type}`);
+            console.log(`dateTimePromptValidator.recognized type is : ${JSON.stringify(promptContext.recognized.value[0])}`);
 
      //      const tmp = new TimexProperty(timex);
      //       console.log(`JSON conversion for dateTimePromptValidator.tmp : ${JSON.stringify(tmp)}`);
