@@ -21,7 +21,7 @@ class MainDialog extends LogoutDialog {
     constructor(logger) {
         super('MainDialog');
 
-        console.log('mainDialog.constructor()');
+//        console.log('mainDialog.constructor()');
 
         if (!logger) {
             logger = console;
@@ -58,7 +58,7 @@ class MainDialog extends LogoutDialog {
      * @param {*} accessor
      */
     async run(turnContext, accessor) {
-        console.log('mainDialog.run()');
+//        console.log('mainDialog.run()');
         const dialogSet = new DialogSet(accessor);
         dialogSet.add(this);
 
@@ -70,7 +70,7 @@ class MainDialog extends LogoutDialog {
     }
 
     async promptStep(stepContext) {
-        console.log('mainDialog.promptStep()  -->  LOGIN');
+ //       console.log('mainDialog.promptStep()  -->  LOGIN');
         return stepContext.beginDialog(OAUTH_PROMPT);
     }
 
@@ -80,13 +80,11 @@ class MainDialog extends LogoutDialog {
      * Note that the sample LUIS model will only recognize Paris, Berlin, New York and London as airport cities.
      */
     async introStep(stepContext) {
-        console.log('mainDialog.introStep()');
+ //       console.log('mainDialog.introStep()');
 
         // Get the token from the previous step. Note that we could also have gotten the
         // token directly from the prompt itself. There is an example of this in the next method.
         const tokenResponse = stepContext.result;
-
-        console.log(`tokenResponse -----> ${tokenResponse}`);
 
         if (tokenResponse) {
             await stepContext.context.sendActivity('You are now logged in.');
@@ -105,7 +103,7 @@ class MainDialog extends LogoutDialog {
 
 
     async commandStep(stepContext) {
-        console.log('mainDialog.commandStep()');
+//       console.log('mainDialog.commandStep()');
 
         stepContext.values['command'] = stepContext.result;
 
@@ -127,7 +125,7 @@ class MainDialog extends LogoutDialog {
      * Then, it hands off to the bookingDialog child dialog to collect any remaining details.
      */
     async actStep(stepContext) {
-        console.log('mainDialog.actStep()');
+//        console.log('mainDialog.actStep()');
 
         let bookingDetails = {};
 
@@ -152,13 +150,13 @@ class MainDialog extends LogoutDialog {
      */
     async finalStep(stepContext) {
 
-        console.log('mainDialog.finalStep()');
+//        console.log('mainDialog.finalStep()');
 
         // If the child dialog ("bookingDialog") was cancelled or the user failed to confirm, the Result here will be null.
         if (stepContext.result) {
             const result = stepContext.result;
 
-            console.log(result);
+//            console.log(result);
 
             // Now we have all the booking details.
             // This is where calls to the booking AOU service or database would go.

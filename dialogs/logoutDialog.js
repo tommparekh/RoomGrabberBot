@@ -24,7 +24,7 @@ class LogoutDialog extends ComponentDialog {
     }
 
     async interrupt(innerDc) {
-        console.log(`logoutDialog.interrupt() with innerDc = ${innerDc}`);
+ //       console.log(`logoutDialog.interrupt() with innerDc = ${innerDc}`);
  //       console.log(`logout activity type = ${innerDc.context.activity.type}`);
         if (innerDc.context.activity.type === ActivityTypes.Message) {
  //           console.log(`logout activity text = ${innerDc.context.activity.text}`);
@@ -38,7 +38,7 @@ class LogoutDialog extends ComponentDialog {
             }
         }
 
-        console.log(`Exiting logoutDialog.interrupt()`);
+//        console.log(`Exiting logoutDialog.interrupt()`);
     }
 }
 

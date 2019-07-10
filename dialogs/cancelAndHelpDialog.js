@@ -25,7 +25,7 @@ class CancelAndHelpDialog extends ComponentDialog {
     }
 
     async interrupt(innerDc) {
-        console.log(`cancelAndHelpDialog.interrupt()  innerDc = ${innerDc}`);
+//        console.log(`cancelAndHelpDialog.interrupt()  innerDc = ${innerDc}`);
 
         if (innerDc) {
    //         console.log(`cancelAndHelpDialog activity text = ${innerDc.context.activity.text}`);
