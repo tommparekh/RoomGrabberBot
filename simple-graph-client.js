@@ -84,13 +84,33 @@ class SimpleGraphClient {
      */
     async getMe() {
         console.log('Simple-graph-client.getMe() called');
-    
+
         console.log(JSON.stringify(this.graphClient));
+
+        /*
         return await this.graphClient
             .api('/me')
             .get().then((res) => {
                 return res;
             });
+        */
+
+
+        return await fetch(this.graphClient.api('/me').buildFullUrl(), {
+            headers: {
+                "Authorization": "Bearer " + this._token
+            }
+        })
+            .then((res) => {
+                var contentType = res.headers.get("content-type");
+                if (contentType && contentType.includes("application/json")) {
+                    return res.json();
+                }
+                throw new TypeError("Oops, we haven't got JSON!");
+            })
+            .then((json) => { return json; });
+
+ 
     }
 
     /**
