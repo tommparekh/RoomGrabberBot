@@ -83,6 +83,9 @@ class SimpleGraphClient {
      * Collects information about the user in the bot.
      */
     async getMe() {
+        console.log('Simple-graph-client.getMe() called');
+    
+        console.log(JSON.stringify(this.graphClient));
         return await this.graphClient
             .api('/me')
             .get().then((res) => {
@@ -94,6 +97,7 @@ class SimpleGraphClient {
      * Collects the user's manager in the bot.
      */
     async getManager() {
+
         return await this.graphClient
             .api('/me/manager')
             .version('beta')

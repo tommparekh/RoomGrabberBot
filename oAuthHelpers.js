@@ -42,6 +42,7 @@ class OAuthHelpers {
      * @param {TokenResponse} tokenResponse A response that includes a user token.
      */
     static async listMe(context, tokenResponse) {
+        console.log('Inside oAuthHelpers.listMe()');
         if (!context) {
             throw new Error('OAuthHelpers.listMe(): `context` cannot be undefined.');
         }
@@ -49,12 +50,17 @@ class OAuthHelpers {
             throw new Error('OAuthHelpers.listMe(): `tokenResponse` cannot be undefined.');
         }
 
+      //  console.log(JSON.stringify(tokenResponse));
+ 
         try {
             // Pull in the data from Microsoft Graph.
             const client = new SimpleGraphClient(tokenResponse.token);
+    
             const me = await client.getMe();
             const manager = await client.getManager();
 
+            console.log('3');
+            console.log(`me = ${me} and manager = ${manager}`);
             await context.sendActivity(`You are ${ me.displayName } and you report to ${ manager.displayName }.`);
         } catch (error) {
             throw error;
